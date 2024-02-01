@@ -1,0 +1,488 @@
+/* TrackInput */
+.input {
+  border-radius: 10px;
+  outline: 2px solid #febf00;
+  border: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background-color: #e2e2e2;
+  outline-offset: 3px;
+  padding: 10px 1rem;
+  transition: 0.25s;
+  /* height: 1.5em; */
+  width: 7rem;
+}
+
+.input:focus {
+  outline-offset: 5px;
+  background-color: #fff;
+}
+
+/* TrackButton */
+.contactButton {
+  background: #3cb371;
+  color: white;
+  font-family: inherit;
+  padding: 0.5em;
+  padding-left: 1.2em;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 1em;
+  border: none;
+  letter-spacing: 0.05em;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 0 0 1.8em -0.7em #2e8b57;
+  overflow: hidden;
+  position: relative;
+  height: 2.5em;
+  padding-right: 3.5em;
+  cursor: pointer;
+}
+
+.iconButton {
+  margin-left: 1.2em;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 2.4em;
+  width: 2.4em;
+  border-radius: 1.2em;
+  box-shadow: 0.15em 0.15em 0.8em 0.3em #32cd32;
+  right: 0.4em;
+  transition: all 0.3s;
+}
+
+.contactButton:hover {
+  transform: translate(-0.05em, -0.05em);
+  box-shadow: 0.2em 0.2em #228b22;
+}
+
+.contactButton:active {
+  transform: translate(0.05em, 0.05em);
+  box-shadow: 0.1em 0.1em #228b22;
+}
+
+/* TrackButtonV2 */
+button {
+  font-family: inherit;
+  font-size: 20px;
+  background: #3cb371;
+  color: white;
+  padding: 0.7em 1em;
+  padding-left: 0.9em;
+  display: flex;
+  align-items: center;
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.2s;
+  height: 2.8rem;
+  cursor: pointer;
+}
+
+.track-button span {
+  display: block;
+  margin-left: 0.3em;
+  transition: all 0.3s ease-in-out;
+}
+
+.track-button svg {
+  display: block;
+  transform-origin: center center;
+  transition: transform 0.3s ease-in-out;
+}
+
+.track-button:hover .svg-wrapper {
+  animation: fly-1 0.6s ease-in-out infinite alternate;
+}
+
+.track-button:hover svg {
+  transform: translateX(2.2em);
+}
+
+.track-button:hover span {
+  transform: translateX(5em);
+}
+
+.track-button:active {
+  transform: scale(0.95);
+}
+
+@keyframes fly-1 {
+  from {
+    transform: translateY(0.1em);
+  }
+
+  to {
+    transform: translateY(-0.1em);
+  }
+}
+
+/* Card */
+.card {
+  /* width: 24rem; */
+  /* height: 254px; */
+  margin: 0 auto;
+  margin-bottom: 10px;
+  background-color: #f8fbfe;
+  border-radius: 8px;
+  z-index: 1;
+  padding: 0 10px 10px 10px;
+  /* border: solid blue; */
+}
+
+.tools {
+  display: flex;
+  align-items: center;
+  padding: 9px;
+}
+
+.circle {
+  padding: 0 4px;
+}
+
+.box {
+  display: inline-block;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  padding: 1px;
+  border-radius: 50%;
+}
+
+.red {
+  background-color: #ff605c;
+}
+
+.yellow {
+  background-color: #ffbd44;
+}
+
+.green {
+  background-color: #00ca4e;
+}
+
+/* Footer */
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 15px #00000027;
+  padding: 15px 10px;
+  border-radius: 5em;
+}
+
+.social-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 0 10px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #00000027;
+  transition: 0.3s;
+}
+
+.social-button:hover {
+  background-color: #f2f2f2;
+  box-shadow: 0px 0px 6px 3px #00000027;
+}
+
+.social-buttons svg {
+  transition: 0.3s;
+  height: 20px;
+}
+
+.portfolio {
+  background-color: #3b5998;
+}
+
+.portfolio svg {
+  fill: #f2f2f2;
+}
+
+.portfolio:hover svg {
+  fill: #3b5998;
+}
+
+.github {
+  background-color: #333;
+}
+
+.github svg {
+  width: 25px;
+  height: 25px;
+  fill: #f2f2f2;
+}
+
+.github:hover svg {
+  fill: #333;
+}
+
+.linkedin {
+  background-color: #0077b5;
+}
+
+.linkedin svg {
+  fill: #f2f2f2;
+}
+
+.linkedin:hover svg {
+  fill: #0077b5;
+}
+
+.whatsapp {
+  background-color: #25d366;
+}
+
+.whatsapp svg {
+  fill: #f2f2f2;
+}
+
+.whatsapp:hover svg {
+  fill: #25d366;
+}
+
+/* TrackLoader */
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 20px auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.loader::after {
+  content: "";
+  width: 48px;
+  height: 48px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: 50% 50% 0;
+  border: 15px solid #2e8b57;
+  transform: rotate(45deg) translate(0, 0);
+  box-sizing: border-box;
+  animation: animMarker 0.4s ease-in-out infinite alternate;
+}
+
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150%;
+  width: 24px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  animation: animShadow 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes animMarker {
+  0% {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  100% {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}
+
+@keyframes animShadow {
+  0% {
+    transform: scale(0.5);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* TrackPrint */
+button.print-button {
+  width: 50px;
+  height: 50px;
+}
+span.print-icon,
+span.print-icon::before,
+span.print-icon::after,
+button.print-button:hover .print-icon::after {
+  border: solid 2px #333;
+}
+span.print-icon::after {
+  border-width: 2px;
+}
+
+button.print-button {
+  position: relative;
+  padding: 0;
+  border: 0;
+
+  border: none;
+  background: transparent;
+}
+
+span.print-icon,
+span.print-icon::before,
+span.print-icon::after,
+button.print-button:hover .print-icon::after {
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+span.print-icon {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+  margin-top: 20%;
+
+  width: 60%;
+  height: 35%;
+  background: #fff;
+  border-radius: 20% 20% 0 0;
+}
+
+span.print-icon::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 12%;
+  right: 12%;
+  height: 110%;
+
+  transition: height 0.2s 0.15s;
+}
+
+span.print-icon::after {
+  content: "";
+  position: absolute;
+  top: 55%;
+  left: 12%;
+  right: 12%;
+  height: 0%;
+  background: #fff;
+  background-repeat: no-repeat;
+  background-size: 70% 90%;
+  background-position: center;
+  background-image: linear-gradient(
+    to top,
+    #fff 0,
+    #fff 14%,
+    #333 14%,
+    #333 28%,
+    #fff 28%,
+    #fff 42%,
+    #333 42%,
+    #333 56%,
+    #fff 56%,
+    #fff 70%,
+    #333 70%,
+    #333 84%,
+    #fff 84%,
+    #fff 100%
+  );
+
+  transition: height 0.2s, border-width 0s 0.2s, width 0s 0.2s;
+}
+
+button.print-button:hover {
+  cursor: pointer;
+}
+
+button.print-button:hover .print-icon::before {
+  height: 0px;
+  transition: height 0.2s;
+}
+button.print-button:hover .print-icon::after {
+  height: 120%;
+  transition: height 0.2s 0.15s, border-width 0s 0.16s;
+}
+
+/* DownloadButton */
+.buttonDownload {
+  display: inline-block;
+  position: relative;
+  padding: 10px 25px;
+  background-color: #0080ff;
+  color: white;
+  font-family: sans-serif;
+  text-decoration: none;
+  font-size: 0.8em;
+  text-align: center;
+  text-indent: 15px;
+  border: none;
+  margin: 5px;
+}
+
+.buttonDownload:hover {
+  background-color: #0074e9;
+  color: white;
+}
+
+.buttonDownload:before,
+.buttonDownload:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  left: 15px;
+  top: 52%;
+}
+
+.buttonDownload:before {
+  width: 10px;
+  height: 2px;
+  border-style: solid;
+  border-width: 0 2px 2px;
+}
+
+.buttonDownload:after {
+  width: 0;
+  height: 0;
+  margin-left: 3px;
+  margin-top: -7px;
+  border-style: solid;
+  border-width: 4px 4px 0 4px;
+  border-color: transparent;
+  border-top-color: inherit;
+  animation: downloadArrow 1s linear infinite;
+  animation-play-state: paused;
+}
+
+.buttonDownload:hover:before {
+  border-color: #cdefbd;
+}
+
+.buttonDownload:hover:after {
+  border-top-color: #cdefbd;
+  animation-play-state: running;
+}
+
+@keyframes downloadArrow {
+  0% {
+    margin-top: -7px;
+    opacity: 1;
+  }
+
+  0.001% {
+    margin-top: -15px;
+    opacity: 0.4;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    margin-top: 0;
+    opacity: 0.4;
+  }
+}
