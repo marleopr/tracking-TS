@@ -23,7 +23,7 @@ const transportadoras: Transportadora[] = [
     {
       nome: "Braspress",
       url: "https://www.braspress.com/rastreie-sua-encomenda/",
-      logoUrl: "https://melhorrastreio.com.br/files/melhorenvio.3b490f17.svg",
+      logoUrl: "https://www.braspress.com/wp-content/themes/braspress/img/braspress-logo.png",
     },
     {
       nome: "BuscoLog",
@@ -41,6 +41,11 @@ const transportadoras: Transportadora[] = [
       url: "https://www.fedex.com/fedextrack/",
       logoUrl:
         "https://logodownload.org/wp-content/uploads/2014/07/fedex-logo-2.png",
+    },
+    {
+      nome: "FM Transportes",
+      url: "https://rastreio.alfatracking.com.br/#//",
+      logoUrl: "https://fmtransportes.com.br/wp-content/uploads/2022/02/img-logo-footer.png"
     },
     {
       nome: "JadLog",
@@ -77,6 +82,12 @@ const transportadoras: Transportadora[] = [
         "https://www.mandae.com.br/wp-content/uploads/2021/12/tagline_principal.png",
     },
     {
+      nome: "Rede Sul",
+      url: "https://ssw.inf.br/tracking/ssw_destinatario",
+      logoUrl:
+        "https://rastreamentopedido.com.br/wp-content/uploads/2023/04/4-1024x389.png",
+    },
+    {
       nome: "Sequoia",
       url: "https://sfx.sequoialog.com.br/rastreamento/pedido",
       logoUrl:
@@ -84,7 +95,8 @@ const transportadoras: Transportadora[] = [
     },
     {
       nome: "Total Express",
-      url: "https://totalexpress.com.br/rastrear-um-produto/",
+      // url: "https://totalexpress.com.br/rastrear-um-produto/",
+      url: "https://tracking.totalexpress.com.br/status-pedidos",
       logoUrl:
         "https://logodownload.org/wp-content/uploads/2019/09/total-express-logo-2.png",
     },
@@ -93,7 +105,7 @@ const transportadoras: Transportadora[] = [
       url: "https://www.tnt.com/express/pt_br/site/ferramentas-de-remessas/rastreamento.html",
       logoUrl:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/TNT_Express_Logo.svg/1920px-TNT_Express_Logo.svg.png",
-    },
+    }
   ];
 
 const LinksExternos: React.FC = () => {

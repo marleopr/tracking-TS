@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
             </div>
             <div style={{ display: "flex", flexDirection: "column", textAlign: 'center' }}>
                 <p style={{ margin: 0 }}>
-                    Márleo Piber • Full Stack Developer © 2023 •
+                    Márleo Piber • Full Stack Developer © 2024 •
                     Desenvolvido com a API
                     <a href="https://linketrack.com/" target="_blank" rel="noopener noreferrer">
                         <img style={{ width: "100px", marginLeft: "5px" }} src={linkTrackLogo} alt="Link & Track" />
