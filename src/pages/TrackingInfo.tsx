@@ -44,6 +44,7 @@ const getIconForStatus = (status: string) => {
     "Fiscalização aduaneira finalizada": <FaCheck />,
     "Objeto encaminhado": <FaTruck />,
     "Objeto saiu para entrega ao destinatário": <FaExclamationCircle />,
+    "A entrega não pode ser efetuada - Empresa sem expediente": <FaTimesCircle />,
     "Saída para entrega cancelada": <FaTimesCircle />,
     "Objeto entregue ao destinatário": <FaCheck />,
   };
@@ -72,7 +73,7 @@ const TrackingInfo: React.FC<TrackingInfoProps> = ({ trackingData }) => {
     window.scrollTo(0, 0);
   };
 
-  const lastEvent = trackingData.eventos[0]; // Obtém o último evento
+  const lastEvent = trackingData.eventos[0]; 
 
   return (
     <div style={{ display: "flex", justifyContent: "center" }}>
@@ -99,7 +100,6 @@ const TrackingInfo: React.FC<TrackingInfoProps> = ({ trackingData }) => {
           <StatusBar evento={lastEvent} />
         </div>
         {trackingData.eventos.map((evento, index) => {
-          // Separa a origem e o destino a partir do array subStatus
           const [origem, destino] = evento.subStatus.map(
             (sub) => sub.split(": ")[1]
           );
@@ -120,7 +120,6 @@ const TrackingInfo: React.FC<TrackingInfoProps> = ({ trackingData }) => {
               <div className="card__content"></div>
               <Box mb="4" fontSize="2xl">
                 {getIconForStatus(evento.status)}{" "}
-                {/* Ícone correspondente ao status */}
                 {evento.status}
               </Box>
               <p>

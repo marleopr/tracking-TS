@@ -9,14 +9,12 @@ import {
   FaFlag,
   FaMoneyBill,
   FaTimesCircle,
+  FaTrash,
   FaTruck,
   FaUndo,
 } from "react-icons/fa";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
-
-// Se StyledTrashIcon for um ícone do react-icons, você pode usá-lo diretamente.
-// Caso contrário, você pode criar um componente StyledTrashIcon como mostrado anteriormente.
 
 interface TrackHistoryProps {
   searchHistory: Array<{ codigo: string; status: string }>;
@@ -42,10 +40,10 @@ const TrackHistory: React.FC<TrackHistoryProps> = ({
       "Fiscalização aduaneira finalizada": <FaCheck />,
       "Objeto encaminhado": <FaTruck />,
       "Objeto saiu para entrega ao destinatário": <FaExclamationCircle />,
+      "A entrega não pode ser efetuada - Empresa sem expediente": <FaTimesCircle />,
       "Saída para entrega cancelada": <FaTimesCircle />,
       "Objeto entregue ao destinatário": <FaCheck />,
     };
-    // Aqui estamos garantindo que o retorno seja do tipo React.ReactNode
     return statusDict[status] || <FaBox />;
   };
 
@@ -56,12 +54,11 @@ const TrackHistory: React.FC<TrackHistoryProps> = ({
         {searchHistory.map((item, index) => (
           <ul key={index}>
             <div>
-              <span onClick={() => handleSearchFromHistory(item.codigo)}>
+              <span onClick={() => handleSearchFromHistory(item.codigo)} onKeyDown={() => {}}>
                 {getIconForStatus(item.status)} {item.codigo} -{" "}
                 {item.status ? item.status : "Status não disponível"}
               </span>
-              {/* Se StyledTrashIcon for um ícone, você pode substituir por um ícone do react-icons */}
-              <FaBan
+              <StyledTrashIcon
                 onClick={() => handleDeleteSearch(index)}
                 aria-label="Excluir"
                 title="Excluir"
@@ -100,5 +97,17 @@ const HistoryContainer = styled.div`
   ul {
     margin: 10px 5px 0 5px;
     padding: 0;
+  }
+`;
+
+const StyledTrashIcon = styled(FaTrash)`
+  margin-left: 5px;
+  cursor: pointer;
+  color: #333;
+  &:hover {
+    color: red;
+  }
+  &:active {
+    color: #930000;
   }
 `;

@@ -31,11 +31,7 @@ const BuscaCep: React.FC = () => {
   const [buttonClicked, setButtonClicked] = useState<boolean>(false);
 
   const navigate = useNavigate();
-//   const handleNavigate = () => {
-//     goToHomePage(navigate);
-//   };
 
-  // Função auxiliar para recuperar o histórico do localStorage
   const getCepHistoryFromLocalStorage = (): CepData[] => {
     const savedCepHistory = localStorage.getItem("cepHistory");
     return savedCepHistory ? JSON.parse(savedCepHistory) : [];
@@ -47,13 +43,12 @@ const BuscaCep: React.FC = () => {
   const handleDeleteCep = (indexToDeleteCep: number): void => {
     setCepHistory((prevCepHistory) => {
       const updateCepHistory = [...prevCepHistory];
-      updateCepHistory.splice(indexToDeleteCep, 1); // Remove o item pelo índice
+      updateCepHistory.splice(indexToDeleteCep, 1); 
       localStorage.setItem("cepHistory", JSON.stringify(updateCepHistory));
       return updateCepHistory;
     });
   };
 
-  // Salvar o histórico no localStorage sempre que for atualizado
   useEffect(() => {
     localStorage.setItem("cepHistory", JSON.stringify(cepHistory));
   }, [cepHistory]);
@@ -64,7 +59,7 @@ const BuscaCep: React.FC = () => {
         `https://viacep.com.br/ws/${codigoCep}/json/`
       );
       if (res.data.erro) {
-        setCepData(null); // Define como null para indicar que os dados do CEP não foram encontrados
+        setCepData(null); 
         setLoading(false);
         toast.error("O CEP digitado não foi encontrado ou é inválido.");
       } else {
@@ -72,7 +67,6 @@ const BuscaCep: React.FC = () => {
         setLoading(false);
         toast.success("CEP encontrado!");
 
-        // Verificar se o CEP já está no histórico antes de adicionar
         if (!cepHistory.some((item) => item.cep === res.data.cep)) {
           setCepHistory((prevCepHistory) => [res.data, ...prevCepHistory]);
         }
@@ -96,7 +90,6 @@ const BuscaCep: React.FC = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [buttonClicked]);
 
-  // Função para realizar uma nova pesquisa com o código clicado no histórico
   const handleCepFromHistory = (codigoCep: string): void => {
     setCodigoCep(codigoCep);
     setCepData(null);
@@ -136,7 +129,6 @@ const BuscaCep: React.FC = () => {
         <CepCointainer>
           <span>
             <TrackInput
-              //   type="number"
               placeholder="Digite o CEP aqui"
               value={codigoCep}
               onChange={(event: ChangeEvent<HTMLInputElement>) =>
@@ -156,9 +148,9 @@ const BuscaCep: React.FC = () => {
           </span>
         </CepCointainer>
       </div>
-      {loading ? (
-        <TrackLoader />
-      ) : cepData ? (
+      {loading && <TrackLoader />}
+      
+      {!loading && cepData && (
         <div>
           <div style={{ display: "flex", justifyContent: "center" }}>
             <TrackButton
@@ -172,16 +164,16 @@ const BuscaCep: React.FC = () => {
           </div>
           <CepInfo cepData={cepData} />
         </div>
-      ) : (
-        cepHistory.length > 0 && (
-          <HistoricCepDiv>
-            <CepHistory
-              cepHistory={cepHistory}
-              handleCepFromHistory={handleCepFromHistory}
-              handleDeleteCep={handleDeleteCep}
-            />
-          </HistoricCepDiv>
-        )
+      )}
+      
+      {!loading && !cepData && cepHistory.length > 0 && (
+        <HistoricCepDiv>
+          <CepHistory
+            cepHistory={cepHistory}
+            handleCepFromHistory={handleCepFromHistory}
+            handleDeleteCep={handleDeleteCep}
+          />
+        </HistoricCepDiv>
       )}
       <ToastContainer />
     </div>
