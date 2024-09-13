@@ -8,12 +8,12 @@ import "react-toastify/dist/ReactToastify.css";
 import styled from "styled-components";
 import TrackInput from "../components/loadersButtons/TrackInput";
 import TrackButtonV2 from "../components/loadersButtons/TrackButtonV2";
-import LinksExternos from "../components/linksExternos/LinksExternos";
 import TrackLoader from "../components/loadersButtons/TrackLoader";
 import TrackButton from "../components/loadersButtons/TrackButton";
 import TrackingInfo from "./TrackingInfo";
 import TrackHistory from "../components/trackHistory/TrackHistory";
 import { Box } from "@mui/material";
+import ModalCarriers from "../components/ModalCarriers";
 
 interface ApiData {
   codigo: string;
@@ -161,31 +161,26 @@ const HomePage: React.FC = () => {
     >
       <ToastContainer />
       <TrackCointainer>
-      <TrackButton
-        onClick={handleNavigate}
-        label="Buscar CEP"
-        style={{ minHeight: "40px" }} 
-        iconSvg={
-          <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-112 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
-        }
-      />
+        <TrackButton
+          onClick={handleNavigate}
+          label="Buscar CEP"
+          style={{ minHeight: "40px" }}
+          iconSvg={
+            <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM288 176c0-44.2-35.8-80-80-80s-80 35.8-80 80c0 48.8 46.5 111.6 68.6 138.6c6 7.3 16.8 7.3 22.7 0c22.1-27 68.6-89.8 68.6-138.6zm-112 0a32 32 0 1 1 64 0 32 32 0 1 1 -64 0z" />
+          }
+        />
         <Box alignItems="center" margin="10px">
           {apiData ? (
             <TrackButton
               onClick={handleReloadHomePage}
               label="Nova pesquisa"
-              style={{ minHeight: "40px" }} 
+              style={{ minHeight: "40px" }}
               iconSvg={
                 <path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z" />
               }
             />
           ) : (
-            <Box
-              display="flex"
-              alignItems="center"
-              gap={2}
-              margin="10px"
-            >
+            <Box display="flex" alignItems="center" gap={2} margin="10px">
               <TrackInput
                 placeholder={"Digite seu código"}
                 value={codigo.toUpperCase()}
@@ -205,8 +200,7 @@ const HomePage: React.FC = () => {
           )}
         </Box>
       </TrackCointainer>
-      
-      <LinksExternos />
+      <ModalCarriers />
       {error && <p style={{ color: "red", width: "70%" }}>{error}</p>}
       {loading ? (
         <TrackLoader />
