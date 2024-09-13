@@ -77,7 +77,7 @@ export default TrackHistory;
 const HistoryContainer = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: #f8fbfe;
+  /* background-color: #f8fbfe; */
   max-height: 25rem;
   overflow: auto;
   width: 100%;
@@ -103,7 +103,7 @@ const HistoryContainer = styled.div`
 const StyledTrashIcon = styled(FaTrash)`
   margin-left: 5px;
   cursor: pointer;
-  color: #333;
+  /* color: #333; */
   &:hover {
     color: red;
   }

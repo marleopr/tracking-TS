@@ -3,6 +3,7 @@ import trackingLogo from "../assets/tracking logo.png";
 import DownloadButton from "../components/loadersButtons/DownloadButton";
 import { goToHomePage } from "../routes/coordinator";
 import { useNavigate } from "react-router-dom";
+import Toggler from "../components/Toggler";
 
 const Header: React.FC = () => {
     const navigate = useNavigate();
@@ -12,7 +13,8 @@ const Header: React.FC = () => {
             <div style={{ cursor: "pointer" }} onClick={() => goToHomePage(navigate)}>
                 <ImgLogo src={trackingLogo} alt="Tracking Logo" />
             </div>
-            <DownloadButton />
+            {/* <DownloadButton /> */}
+            {/* <Toggler darkMode={darkMode} handleClick={handleClick}/> */}
         </div>
     );
 };

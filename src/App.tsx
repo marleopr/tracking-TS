@@ -4,11 +4,10 @@ import { Router } from "./routes/Router";
 import Footer from "./pages/Footer";
 function App() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100vh', padding: '5px' }}>
-    <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}>
+     <div style={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', minHeight: '100vh', padding: '5px' }}>
+    <div>
     <Router />
     </div>
-    <Footer />
   </div>
   );
 }

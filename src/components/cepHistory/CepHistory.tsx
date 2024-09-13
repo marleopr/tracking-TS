@@ -50,7 +50,7 @@ const CepHistoryContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: #f8fbfe;
+  /* background-color: #f8fbfe; */
   max-height: 25rem;
   overflow: auto;
   width: 100%;
@@ -76,7 +76,7 @@ const CenteredContent = styled.div`
 const StyledTrashIcon = styled(FaTrash)`
   margin-left: 5px;
   cursor: pointer;
-  color: #333;
+  /* color: #333; */
   &:hover {
     color: red;
   }
