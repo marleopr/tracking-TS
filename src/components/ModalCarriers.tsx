@@ -3,7 +3,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import LinksExternos from "./linksExternos/LinksExternos";
-import TrackButtonV2 from "./loadersButtons/TrackButtonV2";
+import TrackButton from "./loadersButtons/TrackButton";
 import { TruckIcon } from "./loadersButtons/IconsSvg";
 
 const style = {
@@ -25,10 +25,9 @@ export default function ModalCarriers() {
 
   return (
     <Box>
-      <TrackButtonV2 
+      <TrackButton 
       onClick={handleOpen}
       label="Transportadoras"
-      disabled={false}
       iconSvg={TruckIcon}
       />
       <Modal

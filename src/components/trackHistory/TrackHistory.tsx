@@ -49,8 +49,8 @@ const TrackHistory: React.FC<TrackHistoryProps> = ({
 
   return (
     <div>
-      <h3>Histórico de Pesquisas:</h3>
       <HistoryContainer>
+      <h3>Histórico de Pesquisas:</h3>
         {searchHistory.map((item, index) => (
           <ul key={index}>
             <div>
@@ -97,6 +97,10 @@ const HistoryContainer = styled.div`
   ul {
     margin: 10px 5px 0 5px;
     padding: 0;
+  }
+  h3 {
+    display: flex;
+    justify-content: center;
   }
 `;
 

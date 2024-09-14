@@ -6,6 +6,7 @@ footer {
 
 .dark {
   background-color: $dark;
+  // background-image: $gradienteBlack;
   color: $white;
   transition: all 400ms;
 
@@ -24,7 +25,8 @@ footer {
 }
 
 .light {
-  background-color: $white;
+  // background-color: $white;
+  background-image: $gradienteWhite;
   color: $dark;
   transition: all 400ms;
 }

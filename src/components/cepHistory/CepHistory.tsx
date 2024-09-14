@@ -19,8 +19,8 @@ const CepHistory: React.FC<CepHistoryProps> = ({
 }) => {
   return (
     <div>
-      <h3>Histórico de Pesquisas:</h3>
       <CepHistoryContainer>
+      <h3>Histórico de Pesquisas:</h3>
         {cepHistory.map((item, index) => (
           <li key={index}>
             <CenteredContent>

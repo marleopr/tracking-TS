@@ -19,6 +19,7 @@ import {
   SearchIcon,
   TruckIcon,
 } from "../components/loadersButtons/IconsSvg";
+import AdSenseBanner from "../components/linksExternos/AdSenseBanner";
 
 interface ApiData {
   codigo: string;
@@ -199,6 +200,7 @@ const HomePage: React.FC = () => {
           )}
         </Box>
       </TrackCointainer>
+      <AdSenseBanner />
       <ModalCarriers />
       {error && <p style={{ color: "red", width: "70%" }}>{error}</p>}
       {loading ? (
