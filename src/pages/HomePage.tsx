@@ -200,7 +200,7 @@ const HomePage: React.FC = () => {
           )}
         </Box>
       </TrackCointainer>
-      <AdSenseBanner />
+      {/* <AdSenseBanner /> */}
       <ModalCarriers />
       {error && <p style={{ color: "red", width: "70%" }}>{error}</p>}
       {loading ? (
