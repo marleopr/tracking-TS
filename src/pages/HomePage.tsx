@@ -20,6 +20,7 @@ import {
   TruckIcon,
 } from "../components/loadersButtons/IconsSvg";
 import AdSenseBanner from "../components/linksExternos/AdSenseBanner";
+import EasterEgg from "../components/EasterEgg";
 
 interface ApiData {
   codigo: string;
@@ -201,6 +202,7 @@ const HomePage: React.FC = () => {
         </Box>
       </TrackCointainer>
       {/* <AdSenseBanner /> */}
+      <EasterEgg />
       <ModalCarriers />
       {error && <p style={{ color: "red", width: "70%" }}>{error}</p>}
       {loading ? (
