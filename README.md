@@ -6,7 +6,7 @@ Site de rastreamento de encomendas do Correio utilizando a API [Link&Track](http
 
 # `Link`
 
-https://marleo-tracking.vercel.app/
+https://trackingts.vercel.app/
 
 # `Descrição`
 
@@ -21,6 +21,10 @@ O repositório do projeto pode ser encontrado [aqui](https://github.com/marleopr
 | Tela de pesquisa de CEPs               | CEP pesquisado                            |
 | -------------------------------------- | ----------------------------------------- |
 | <img src="src\assets\cep-inicio.jpg" > | <img src="src\assets\cep-rastreado.jpg" > |
+
+| Modal Transportadoras                             | Tela de erro                              |
+| --------------------------------------            | ----------------------------------------- |
+| <img src="src\assets\modal-transportadoras.jpg" > | <img src="src\assets\pagina-erro.jpg" > |
 
 # `Passo a Passo para Instalação do Projeto React:`
 
